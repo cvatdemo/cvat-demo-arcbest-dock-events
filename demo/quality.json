@@ -1,0 +1,29 @@
+{
+ "max_validations_per_job": 10,
+ "requirements": [
+  {
+   "name": "Activity state and scene tag accuracy",
+   "is_base": true,
+   "annotation_type": "tag",
+   "metric": "accuracy",
+   "required_score": 0.9,
+   "filter": ""
+  },
+  {
+   "name": "Base box quality",
+   "is_base": true,
+   "annotation_type": "rectangle",
+   "metric": "accuracy",
+   "required_score": 0.8,
+   "filter": ""
+  },
+  {
+   "name": "Moving-object boxes: find every one",
+   "is_base": false,
+   "annotation_type": "rectangle",
+   "metric": "recall",
+   "required_score": 0.95,
+   "filter": "{\"in\":[{\"var\":\"shape.label\"},[\"freight_item\",\"forklift\",\"truck\"]]}"
+  }
+ ]
+}
